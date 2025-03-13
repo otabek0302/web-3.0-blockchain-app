@@ -55,13 +55,12 @@ npm run dev
 
 ## 📂 Project Structure
 
-web3-blockchain-app/                   
-
-│── backend/
-│── frontend/
-│── README.md   
-│── LICENSE   
-│── .gitignore   
+web3-blockchain-app/                                                                                                                                                                                                 
+│── backend/                                                                                                                                                                                                         
+│── frontend/                                                                                                                                                                                                        
+│── README.md                                                                                                                                                                                                        
+│── LICENSE                                                                                                                                                                                                          
+│── .gitignore                                                                                                                                                                                                      
 
 
 🏗️ Installation & Setup
