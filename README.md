@@ -53,14 +53,23 @@ npm run dev
   - ESLint
   - Prettier
 
-## �� Project Structure
+## 📂 Project Structure
 
-📂 Project Structure
+web3-blockchain-app/                                                                                                                                                                                                 
+│── backend/                                                                                                                                                                                                         
+│── frontend/                                                                                                                                                                                                        
+│── README.md                                                                                                                                                                                                        
+│── LICENSE                                                                                                                                                                                                          
+│── .gitignore                                                                                                                                                                                                      
 
-web3-blockchain-app/frontend
-│── components/
-│── pages/ 
 
+🏗️ Installation & Setup
+Prerequisites
+Ensure you have the following installed:
+
+
+🔗 API Documentation
+📜 The full API documentation will be available soon (via Swagger or Postman). Stay tuned!
 
 ## 🤝 Contributing
 
