@@ -55,9 +55,10 @@ npm run dev
 
 ## 📂 Project Structure
 
-web3-blockchain-app/
-│── backend/ (Express.js API)  
-│── frontend/ (Next.js 13 + RTK Query)  
+web3-blockchain-app/                   
+
+│── backend/
+│── frontend/
 │── README.md   
 │── LICENSE   
 │── .gitignore   
