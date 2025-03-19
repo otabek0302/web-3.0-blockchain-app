@@ -28,7 +28,8 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center -mt-14 md:-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start justify-between md:p-20 pt-20 pb-12 px-4">
-          <div className="space-y-6 flex flex-1 flex-col justify-start items-start">
+          
+          <div className="md:pt-32 space-y-6 flex flex-1 flex-col justify-start items-start">
             <h1 className="py-1 text-4xl sm:text-5xl text-white text-gradient font-bold leading-tight">
               Send Crypto <br /> to anyone, anywhere in the world.
             </h1>
@@ -88,6 +89,7 @@ const Hero = () => {
               )}
             </div>
           </div>
+
         </div>
       </div>
     </section>
