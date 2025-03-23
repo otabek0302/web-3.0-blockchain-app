@@ -1,7 +1,9 @@
+import { ethers } from "ethers";
 export interface TransactionContextValue {
-    connectWallet: () => Promise<void>;
+    connectWallet?: () => Promise<void>;
     currentAccount?: string | null;
     setCurrentAccount?: React.Dispatch<React.SetStateAction<string | null>>;
+    getEthereumContract: () => Promise<ethers.Contract | undefined>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>, name: string) => void;
     sendTransaction: () => Promise<void>;
     isLoading?: boolean;
