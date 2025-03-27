@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { CardProps } from "../../interfaces/interfaces";
 
 
-const Card = ({ banknumber }: CardProps) => {
-  const [balance, setBalance] = useState(0);
+const Card = ({ accountNumber }: CardProps) => {
+  const [balance, setBalance] = useState<string>("");
 
   useEffect(() => {
-    if (banknumber) {
-      setBalance(banknumber);
+    if (accountNumber) {
+      setBalance(accountNumber);
     }
-  }, [banknumber]);
+  }, [accountNumber]);
 
   return (
     <div className="p-4 flex justify-end items-start flex-col rounded-xl h-48 w-full sm:w-96 my-5 eth-card white-glassmorphism ">
@@ -27,7 +27,7 @@ const Card = ({ banknumber }: CardProps) => {
             <p className="text-white font-semibold text-lg mt-1">Ethereum</p>
           </div>
           <div>
-            <p className="text-white font-light text-sm mb-1">{balance}</p>
+            <p className="text-white font-light text-sm mb-1">{balance.slice(0, 5)}...{balance.slice(-5)}</p>
           </div>
         </div>
       </div>

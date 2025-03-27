@@ -8,7 +8,7 @@ async function main() {
     console.log("Account balance:", (await provider.getBalance(deployer.address)).toString());
 
     const factory = await ethers.getContractFactory("Transactions");
-    
+
     // Increase gas limit and adjust gas prices for better deployment success
     const contract = await factory.deploy({
         gasLimit: 3_000_000,  // Increased gas limit
@@ -25,10 +25,8 @@ async function main() {
 }
 
 // Better error handling
-main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error("Deployment failed!");
-        console.error(error);
-        process.exit(1);
-    });
+main().then(() => process.exit(0)).catch((error) => {
+    console.error("Deployment failed!");
+    console.error(error);
+    process.exit(1);
+});

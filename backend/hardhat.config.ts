@@ -1,8 +1,9 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+
 import "dotenv/config";
 
-if (!process.env.PRIVATE_KEY || !process.env.BUILDBEAR_URL || !process.env.BUILDBEAR_API_KEY) {
+if (!process.env.PRIVATE_KEY || !process.env.BUILDBEAR_URL) {
   throw new Error("Missing environment variables");
 }
 

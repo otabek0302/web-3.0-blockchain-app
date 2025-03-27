@@ -1,9 +1,8 @@
-import { ethers } from "ethers";
 export interface TransactionContextValue {
     connectWallet?: () => Promise<void>;
-    currentAccount?: string | null;
-    setCurrentAccount?: React.Dispatch<React.SetStateAction<string | null>>;
-    getEthereumContract: () => Promise<ethers.Contract | undefined>;
+    disconnectWallet?: () => Promise<void>;
+    connectedAccount?: string | null;
+    setConnectedAccount?: React.Dispatch<React.SetStateAction<string | null>>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>, name: string) => void;
     sendTransaction: () => Promise<void>;
     isLoading?: boolean;
@@ -14,12 +13,11 @@ export interface TransactionContextValue {
 export interface FormData {
     addressTo: string;
     amount: string;
-    keyword: string;
     message: string;
 }
 
 export interface CardProps {
-    banknumber: number;
+    accountNumber: string;
 }
 
 export interface InputProps {
