@@ -3,26 +3,30 @@ import "@nomicfoundation/hardhat-toolbox";
 
 import "dotenv/config";
 
-if (!process.env.PRIVATE_KEY || !process.env.BUILDBEAR_URL) {
-  throw new Error("Missing environment variables");
+function requireEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) throw new Error(`Missing required env var: ${name}`);
+  return value;
 }
+
+const parseGas = (val?: string) => (val && !isNaN(parseInt(val)) ? parseInt(val) : undefined);
 
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
   networks: {
     sepolia: {
-      url: process.env.BUILDBEAR_URL,
-      gas: parseInt(process.env.GAS_LIMIT || "auto"),
-      gasPrice: parseInt(process.env.GAS_PRICE || "auto"),
-      accounts: [process.env.PRIVATE_KEY],
+      url: requireEnv("SEPOLIA_URL"),
+      accounts: [requireEnv("PRIVATE_KEY")],
+      gas: parseGas(requireEnv("SEPOLIA_GAS_LIMIT")),
+      gasPrice: parseGas(requireEnv("SEPOLIA_GAS_PRICE")),
     },
     worryingRhino: {
-      url: process.env.BUILDBEAR_URL,
-      chainId: parseInt(process.env.CHAIN_ID || "25026"),
-      accounts: [process.env.PRIVATE_KEY],
-      gas: parseInt(process.env.GAS_LIMIT || "auto"),
-      gasPrice: parseInt(process.env.GAS_PRICE || "auto"),
-    }
+      url: requireEnv("BUILDBEAR_URL"),
+      chainId: parseInt(requireEnv("CHAIN_ID")),
+      accounts: [requireEnv("PRIVATE_KEY")],
+      gas: parseGas(requireEnv("BUILDBEAR_GAS_LIMIT")),
+      gasPrice: parseGas(requireEnv("BUILDBEAR_GAS_PRICE")),
+    },
   },
 };
 

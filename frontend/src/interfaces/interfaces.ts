@@ -8,16 +8,15 @@ export interface TransactionContextValue {
     isLoading?: boolean;
     formData?: FormData;
     setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+    error?: string | null;
+    success?: string | null;
+    balance?: string | null;
 }
 
 export interface FormData {
     addressTo: string;
     amount: string;
     message: string;
-}
-
-export interface CardProps {
-    accountNumber: string;
 }
 
 export interface InputProps {

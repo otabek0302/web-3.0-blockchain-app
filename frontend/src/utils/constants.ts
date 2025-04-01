@@ -1,5 +1,18 @@
-import abi from "./Transactions.json";
+import abi from "../constants/TransactionsABI.json";
 
-export const sepoliaContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-export const buildbearContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+// Check if the environment variables are set
+if (!import.meta.env.VITE_SEPOLIA_CONTRACT_ADDRESS || !import.meta.env.VITE_BUILDBEAR_CONTRACT_ADDRESS) {
+  throw new Error("Missing environment variables");
+}
+
+// 
+if (abi === undefined) {
+    throw new Error("Contract ABI is empty");
+}
+
+// Get the contract address from the environment variable
+export const sepoliaContractAddress = import.meta.env.VITE_SEPOLIA_CONTRACT_ADDRESS;
+export const buildbearContractAddress = import.meta.env.VITE_BUILDBEAR_CONTRACT_ADDRESS;
+
+// Get the contract ABI from the JSON file
 export const contractABI = abi.abi;

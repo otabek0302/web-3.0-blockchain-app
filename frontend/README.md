@@ -1,54 +1,117 @@
-# React + TypeScript + Vite
+# Web 3.0 Blockchain App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend application for the Web 3.0 Blockchain App, built with React, TypeScript, and Vite. The application provides a modern and responsive user interface for interacting with blockchain functionality.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 with TypeScript support
+- Vite for fast development and building
+- TailwindCSS for styling
+- Ethers.js for blockchain interactions
+- React Router for navigation
+- Anime.js for animations
+- Lucide icons for beautiful UI elements
 
-## Expanding the ESLint configuration
+## 📋 Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v18 or higher recommended)
+- npm package manager
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Installation
+
+1. Clone the repository
+2. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Create a `.env` file based on `.env.example`:
+   ```bash
+   cp .env.example .env
+   ```
+5. Update the environment variables in `.env` with your configuration
+
+## 🔗 Contract Setup
+
+1. After deploying your smart contract in the backend, you'll need to update the contract details in the frontend:
+   - Navigate to `src/constants/contracts.ts`
+   - Update the following constants:
+     ```typescript
+     export const CONTRACT_ADDRESS = "your_deployed_contract_address";
+     export const CONTRACT_ABI = [...]; // Your contract ABI from the backend
+     ```
+
+2. The contract address and ABI should be copied from your backend deployment:
+   - Contract address: The address where your contract was deployed
+   - ABI: The contract's Application Binary Interface from your backend's build artifacts
+
+## 🚀 Development
+
+To start the development server:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🏗️ Building for Production
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To create a production build:
+
+```bash
+npm run build
 ```
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+## 🧪 Linting
+
+To run the linter:
+
+```bash
+npm run lint
+```
+
+## 📁 Project Structure
+
+```
+frontend/
+├── src/
+│   ├── constants/     # Constants and configurations
+│   │   └── contracts.ts  # Contract addresses and ABIs
+│   ├── components/    # Reusable UI components
+│   ├── pages/        # Page components
+│   ├── context/      # React context providers
+│   ├── utils/        # Utility functions
+│   ├── types/        # TypeScript type definitions
+│   └── assets/       # Static assets
+├── public/           # Public static files
+└── ...
+```
+
+## 🔧 Configuration Files
+
+- `vite.config.ts` - Vite configuration
+- `tsconfig.json` - TypeScript configuration
+- `.prettierrc` - Prettier configuration
+- `eslint.config.js` - ESLint configuration
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -1,16 +1,16 @@
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, Loader } from "lucide-react";
 import { TransactionContext } from "../../context/TransactionContext";
 import { useContext } from "react";
 
-import HeroForm from "../ui/HeroForm";
-import HeroImage from "../ui/HeroImage";
+import Form from "../ui/Form";
+import Image from "../ui/Image";
 
 const Hero = () => {
   const transactionContext = useContext(TransactionContext);
 
   if (!transactionContext) return null;
 
-  const { connectWallet, connectedAccount } = transactionContext;
+  const { connectWallet, connectedAccount, isLoading } = transactionContext;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center -mt-14 md:-mt-24">
@@ -22,12 +22,12 @@ const Hero = () => {
             </h1>
             <p className="py-1 text-white font-light md:w-9/12 w-11/12 text-base leading-tight">Explore the crypto world. Buy and sell cryptocurrencies easily on Krypto.</p>
             {!connectedAccount && (
-              <button onClick={connectWallet} className="py-2.5 px-3 lg:px-6 flex items-center bg-[#1B5FFE] hover:bg-[#0A3D91] rounded-xl text-white text-base font-bold hover:shadow-none cursor-pointer transition-all duration-300">
-                Get Started <ArrowRightIcon className="w-4 h-4 ml-2" />
+              <button onClick={connectWallet} disabled={isLoading} className="py-2.5 px-3 lg:px-6 flex items-center bg-[#1B5FFE] hover:bg-[#0A3D91] rounded-xl text-white text-base font-bold hover:shadow-none cursor-pointer transition-all duration-300">
+                {isLoading ? <Loader className="w-4 h-4 ml-2 animate-spin" /> : `Get Started ${<ArrowRightIcon className="w-4 h-4 ml-2" />}`}
               </button>
             )}
           </div>
-          {connectedAccount ? <HeroForm /> : <HeroImage />}
+          {connectedAccount ? <Form /> : <Image />}
         </div>
       </div>
     </section>

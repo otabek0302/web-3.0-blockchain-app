@@ -1,10 +1,16 @@
-# 🌐 Web 3.0 Blockchain Application - Frontend
+# 🌐 Web 3.0 Blockchain Application
 
-The frontend implementation of a modern Web 3.0 blockchain application, built with React and integrated with Ethereum smart contracts.
+A modern Web 3.0 blockchain application with React frontend and Solidity smart contracts backend.
 
 [![React](https://img.shields.io/badge/React-18.0+-blue.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0+-blueviolet.svg)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.0+-blue.svg)](https://www.typescriptlang.org/)
+[![Hardhat](https://img.shields.io/badge/Hardhat-2.0+-yellow.svg)](https://hardhat.org/)
+
+## 📚 Documentation
+
+- [Frontend Documentation](./frontend/README.md)
+- [Backend Documentation](./backend/README.md)
 
 ## 🚀 Quick Start
 
@@ -14,18 +20,29 @@ git clone https://github.com/otabek0302/Web-3.0-Blockchain-App.git
 cd Web-3.0-Blockchain-App
 ```
 
-2. **Install dependencies**
+2. **Install dependencies for both frontend and backend**
 ```bash
+# Install frontend dependencies
+cd frontend
+npm install
+
+# Install backend dependencies
+cd ../backend
 npm install
 ```
 
-3. **Start development server**
+3. **Start development servers**
 ```bash
+# Start frontend (in frontend directory)
 npm run dev
+
+# Start backend (in backend directory)
+npm run compile
 ```
 
-## 🎯 Frontend Features
+## 🎯 Features
 
+### Frontend
 - ⚡ Lightning-fast UI with React
 - 🎨 Responsive design with Tailwind CSS
 - 👛 Seamless wallet connection with MetaMask
@@ -35,8 +52,17 @@ npm run dev
 - 🌐 Cross-chain compatibility
 - 🔐 Secure authentication flow
 
+### Backend
+- 📝 Smart contract development with Solidity
+- 🔧 Hardhat development environment
+- 📊 Multiple network deployment support
+- 🧪 Comprehensive testing suite
+- 🔍 Contract verification
+- 📦 TypeChain for TypeScript bindings
+
 ## 🛠️ Technology Stack
 
+### Frontend
 - **Core**: React.js 18+
 - **Styling**: 
   - Tailwind CSS
@@ -53,22 +79,32 @@ npm run dev
   - ESLint
   - Prettier
 
+### Backend
+- **Smart Contracts**: Solidity
+- **Development Environment**: Hardhat
+- **Testing**: Chai, Mocha
+- **TypeScript Support**: TypeChain
+- **Code Quality**: ESLint, Prettier
+
 ## 📂 Project Structure
 
-web3-blockchain-app/                                                                                                                                                                                                 
-│── backend/                                                                                                                                                                                                         
-│── frontend/                                                                                                                                                                                                        
-│── README.md                                                                                                                                                                                                        
-│── LICENSE                                                                                                                                                                                                          
-│── .gitignore                                                                                                                                                                                                      
+```
+web3-blockchain-app/
+├── frontend/          # React frontend application
+│   ├── src/          # Source files
+│   ├── public/       # Static assets
+│   └── README.md     # Frontend documentation
+├── backend/          # Smart contracts and backend
+│   ├── contracts/    # Solidity smart contracts
+│   ├── scripts/      # Deployment scripts
+│   ├── test/        # Contract tests
+│   └── README.md     # Backend documentation
+├── README.md         # Main documentation
+└── LICENSE          # Project license
+```
 
+## 🔗 API Documentation
 
-🏗️ Installation & Setup
-Prerequisites
-Ensure you have the following installed:
-
-
-🔗 API Documentation
 📜 The full API documentation will be available soon (via Swagger or Postman). Stay tuned!
 
 ## 🤝 Contributing
